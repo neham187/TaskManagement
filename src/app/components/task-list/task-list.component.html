@@ -1,0 +1,41 @@
+<div class="mb-2 align-items-end flex gap-4" style="align-items: flex-end;justify-content: flex-end;">
+  <mat-form-field>
+    <select matNativeControl required [(ngModel)]="filterStatus" (change)="filterChanged()">
+      <option value="all">All</option>
+      <option value="completed">Completed</option>
+      <option value="incompleted">Incompleted</option>
+    </select>
+  </mat-form-field>
+</div>
+<div class="task-list h-full">
+    @if(taskList.length === 0) {
+    <div class="flex flex-col items-center justify-center h-full">
+      <h3>No task added yet! click on the below button to a add new Task</h3>
+      <button
+        (click)="AddTask()"
+        class="mt-4 inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-green-700 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+      >
+        Add New Task
+      </button>
+    </div>
+    } @else {
+    <div>
+      <!-- <app-task-filter (filterChange)="onFilterChange($event)"></app-task-filter> -->
+      @if(taskList.length === 0) {
+      <h2 class="p-4">No Task Found Here!</h2>
+      }
+      <div
+      class=""
+    >
+        @for (task of taskList ; track task?.id) {
+          <app-task-details class="bg-white w-full h-16 px-4 py-2 rounded shadow flex justify-between items-center mt-2 mb-2 pr-8"
+          [task]="task"
+          (delete)="deleteTask(task.id)"
+          (toggle)="toggleTaskCompletion(task.id)"
+        ></app-task-details>
+        }
+      </div>
+    </div>
+    }
+  </div>
+  

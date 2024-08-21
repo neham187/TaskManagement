@@ -1,0 +1,50 @@
+<header class="text-gray-600 body-font shadow-md">
+    <div
+      class="container p-2 flex flex-wrap flex-col md:flex-row items-center"
+    >
+      <a
+        class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0"
+      >
+      <svg
+      xmlns="http://www.w3.org/2000/svg"
+      stroke="currentColor"
+      stroke-linecap="round"
+    stroke-linejoin="round"
+      stroke-width="2"
+      class="h-10 rounded-full text-white fill-blue-500"
+      viewBox="0 0 448 512"
+    >
+      <path
+        d="M422.6 159.7a27.4 27.4 0 0 0 -13.9-23.3 26.4 26.4 0 0 0 -26.2 .1L73.9 314.6V176.3a12 12 0 0 1 6-10.3L218.1 86.2a12.2 12.2 0 0 1 11.9 0l32.7 18.9L112.6 191.7v56L359.6 105.1 241.1 36.7c-11-6.1-22.3-6.3-33.8-.3l-164.6 95c-10.6 6.1-16.8 16.4-17.3 29.1l0 191.5c.2 10.1 5.1 18.7 13.5 23.4a27 27 0 0 0 26.7 0L374.1 197.4V335.7a12 12 0 0 1 -5.9 10.4L230 425.8a12.2 12.2 0 0 1 -11.9 .1l-32.7-18.9 150.1-86.6v-56L88.4 406.9l118.8 68.6a33.9 33.9 0 0 0 34.3-.3l164.5-95c10.7-6.6 16.6-17.1 16.6-29.5z"
+      ></path>
+    </svg>
+        <span class="ml-3 text-xl">TaskTide</span>
+      </a>
+      <nav
+        class="md:mr-auto md:ml-4 md:py-1 md:pl-4 flex flex-wrap items-center text-end text-base justify-items-end"
+      >
+      <input type="text" class="h-8 rounded p-4" placeholder="Seach your tasks" [formControl]="searchControl">
+        <!-- <a
+          class="ml-2 mr-5 hover:text-gray-900 hover: cursor-pointer"
+          routerLink="/tasks"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Task List</a
+        >
+        <a
+          class="mr-5 hover:text-gray-900 hover: cursor-pointer"
+          routerLink="/add-task"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Add Task</a
+        > -->
+      </nav>
+      <button
+      class="ml-2 mt-2 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
+      (click)="AddTask()"
+    >
+      Add Task
+    </button>
+    </div>
+  </header>
+  
